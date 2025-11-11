@@ -1,0 +1,461 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Full-page background image */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #000; /* fallback */
+  overflow-x: hidden;
+  /* Remove flex centering */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  scroll-behavior: smooth;
+}
+
+
+/* Dark overlay for better text contrast */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Center content */
+.content {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  max-width: 600px;
+}
+
+/* Title and text */
+.content h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+/* Purchase button */
+/* ===== PURCHASE NOW BUTTON ===== */
+.purchase-btn {
+  position: relative;
+  left: -450px;
+  top: 120px;
+  background: linear-gradient(135deg, #ffffff, #eaeaea);
+  color: #111;
+  font-weight: 700;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+
+.purchase-btn:hover {
+  background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.25);
+}
+
+/* ===== JOIN US BUTTON ===== */
+.join-btn {
+  background: linear-gradient(135deg, #ff00cc, #ff66ff);
+  color: white;
+  font-weight: 700;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 0, 204, 0.3);
+}
+
+.join-btn:hover {
+  background: linear-gradient(135deg, #ff33dd, #ff88ff);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 102, 255, 0.4);
+}
+
+button {
+  position: relative;
+  left: -450px;
+  top: 155px;    /* moves it slightly down */
+  background: linear-gradient(135deg, #ffffff, #eaeaea);
+  color: #111;
+  font-weight: 700;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.25);
+}
+
+/* ======== MODERN NAVY COSMIC NAVBAR ======== */
+/* ======== PURPLE COSMIC NAVBAR WITH FADED BOTTOM ======== */
+.navmenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between; /* logo left, menu centered */
+  align-items: center;
+  padding: 0 50px;
+  z-index: 9999;
+
+  /* Purple cosmic gradient with fade at bottom */
+  background: linear-gradient(to bottom, #1a0b3f 0%, #3d0f5f 70%, rgba(61,15,95,0.6) 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  border-radius: 0 0 12px 12px;
+}
+
+/* Logo on the left */
+.navmenu .logo {
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 6px #c94fff); /* neon purple glow */
+  z-index: 2;
+}
+
+.navmenu .logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px #e073ff);
+}
+
+/* Navbar menu container to center links */
+.navmenu .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navmenu .nav-links a {
+  color: #e0d9ff;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Purple underline hover effect */
+.navmenu .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #c94fff, #e073ff, #a64fff);
+  transition: width 0.3s ease;
+}
+
+.navmenu .nav-links a:hover::after,
+.navmenu .nav-links .active::after {
+  width: 100%;
+}
+
+.navmenu .nav-links a:hover,
+.navmenu .nav-links .active {
+  color: #ffffff;
+  text-shadow: 0 0 6px #e073ff;
+}
+
+/* ======== MOBILE RESPONSIVE ======== */
+@media (max-width: 900px) {
+  .navmenu {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 20px;
+    border-radius: 0;
+    background: linear-gradient(to bottom, #1a0b3f 0%, #3d0f5f 70%, rgba(61,15,95,0.6) 100%);
+  }
+
+  .navmenu .nav-links {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .navmenu .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+/* Hide mobile toggle on larger screens */
+@media (min-width: 901px) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+
+/* ========== FIXED STRUCTURE LAYOUT ========== */
+.home-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Each section takes full viewport height with spacing */
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* Remove the padding-top from body */
+body {
+  padding-top: 0; /* navbar spacing handled inside navbar and hero-section */
+}
+
+/* Hero section adjustments */
+.hero-section {
+  background: url('images/index.png') no-repeat center top/cover; /* start from top */
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 10%; /* only horizontal padding, no top padding */
+}
+
+
+.about-section {
+  background: #000;
+}
+
+.contact-section {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Headings */
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+section p {
+  max-width: 800px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #f5f5f5;
+}
+
+/* Buttons inside sections */
+section button {
+  margin-top: 30px;
+  background: linear-gradient(135deg, #ffffff, #eaeaea);
+  color: #111;
+  font-weight: 700;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+
+section button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  background: #111;
+  color: white;
+  min-height: 100vh; /* full section height */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== WRAPPER SPLIT LAYOUT ===== */
+.contact-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== LEFT SIDE (FORM) ===== */
+.contact-left {
+  flex: 1;
+  background: #111;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.contact-left h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-left p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* ===== SEND BUTTON ===== */
+.send-btn {
+  background: linear-gradient(135deg, #ff00cc, #ff66ff);
+  left: -5px;
+  top: 20px;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.3);
+}
+
+.send-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, #ff33cc, #ff99ff);
+  box-shadow: 0 0 25px rgba(255, 0, 204, 0.5);
+  opacity: 0.95;
+}
+
+/* ===== RIGHT SIDE (MAP) ===== */
+
+.contact-right {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-right iframe {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 90%;
+  height: 100%;
+  border: none;
+}
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-left, .contact-right {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-left {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .send-btn {
+    width: 100%;
+  }
+
+  .contact-right iframe {
+    height: 300px;
+  }
+}

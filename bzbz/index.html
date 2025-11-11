@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNIVERSE Club</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body class="home-page">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navmenu">
+  <img src="images/universe.png" alt="Logo" class="logo">
+  <ul class="nav-links">
+    <li><a href="#home" >Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-nav-toggle">&#9776;</div>
+</nav>
+
+
+  <!-- ===== HOME SECTION ===== -->
+  <section id="home" class="hero-section">
+    <div class="content">
+      <button onclick="window.location.href='merchform.html'">Purchase Now</button>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about-section">
+    <div class="content">
+      <h2>About UNIVERSE Club</h2>
+      <p>
+        The UNIVERSE Club is a space for creativity and innovation — uniting students and creators
+        who share a passion for art, technology, and collaboration. We organize projects, workshops,
+        and events to help members grow together and explore new ideas.
+      </p>
+      <button style="background: linear-gradient(135deg,#ff00cc,#ff66ff); color:white;"
+        onclick="window.location.href='https://forms.gle/qH1q9E6vjHtewm4J6'">Join Us</button>
+    </div>
+  </section>
+
+<section id="contact" class="contact-section">
+  <div class="contact-wrapper">
+    <!-- LEFT SIDE: CONTACT FORM -->
+    <div class="contact-left">
+      <h2>Contact Us</h2>
+
+      <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="send-btn">Send Message</button>
+      </form>
+    </div>
+
+    <!-- RIGHT SIDE: GOOGLE MAP -->
+    <div class="contact-right">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12766.918737748778!2d10.1658!3d36.8065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3519a8f98a27%3A0xabc1234abcd56789!2sYour%20Club%20Location!5e0!3m2!1sen!2stn!4v1696000000000!5m2!1sen!2stn"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
